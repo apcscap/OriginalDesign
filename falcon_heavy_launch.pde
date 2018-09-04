@@ -1,5 +1,7 @@
 float x;
 float y;
+float spd;
+float acceleration;
 float engineRX;
 float engineRY;
 float engineLX;
@@ -26,7 +28,7 @@ void falconMain(float x, float y) {
 }
 void setup() {
   size(500,500);
-  engineSize = 2;
+  engineSize = 1;
   engineHeight = 50;
   engineWidth = 10;
   capsuleWidth = engineWidth;
@@ -41,6 +43,8 @@ void setup() {
   sparksX = new ArrayList<Float>();
   sparksY = new ArrayList<Float>();
   sparksLifeTime = new ArrayList<Float>();
+  spd = 1;
+  acceleration = 1.01;
 }
 void drawLandingLegs(float x, float y) {
   fill(220);
@@ -113,7 +117,8 @@ void drawEngineWCapsule(float x, float y) {
 }
 void animateFalcon() {
   // Make Falcon Heavy fly.
-  y += -1;
+  y += -spd;
+  spd *= acceleration;
   falconMain(x, y);
   // Update Falcon Heavy.
   drawEngines(engineRX, engineRY);
