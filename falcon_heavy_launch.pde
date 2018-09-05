@@ -28,7 +28,7 @@ void falconMain(float x, float y) {
 }
 void setup() {
   size(500,500);
-  engineSize = 1;
+  engineSize = 2;
   engineHeight = 50;
   engineWidth = 10;
   capsuleWidth = engineWidth;
@@ -44,7 +44,7 @@ void setup() {
   sparksY = new ArrayList<Float>();
   sparksLifeTime = new ArrayList<Float>();
   spd = 1;
-  acceleration = 1.01;
+  acceleration = 1.005;
 }
 void drawLandingLegs(float x, float y) {
   fill(220);
